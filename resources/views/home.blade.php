@@ -93,17 +93,27 @@ window.addEventListener('resize', function() {
     }
 });
 </script>
-  <section class="relative w-screen min-h-screen flex items-center justify-center overflow-hidden">
+  <section class="relative w-screen min-h-screen flex items-center justify-center overflow-hidden bg-[#fdf6ee] px-6">
 
-  <!-- === WRAPPER UTAMA (POSISI TENGAH FIX) === -->
-  <div class="flex flex-col-reverse md:flex-row items-center justify-center 
-              gap-10 text-center md:text-left px-6">
+  <!-- === WRAPPER UTAMA === -->
+  <div class="flex flex-col md:flex-row items-center justify-center gap-10 text-center md:text-left">
 
-    <!-- === TEKS === -->
-    <div class="flex flex-col items-center md:items-start justify-center mt-[-50px] ml-[-50px]">
+    <!-- === ANIMASI DI KIRI === -->
+    <div class="flex justify-center md:justify-end md:w-1/2">
+      <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
+      <dotlottie-wc 
+        src="https://lottie.host/d5c1483b-ec5d-4323-9f1f-0a27fa264eb1/ce0A5yBC7M.lottie" 
+        class="w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px]"
+        autoplay 
+        loop>
+      </dotlottie-wc>
+    </div>
+
+    <!-- === TEKS DI KANAN === -->
+    <div class="flex flex-col items-center md:items-start justify-center md:w-1/2 mt-6 md:mt-[-30px] ml-[-100px] md:ml-[-70px]">
       <h1 class="font-[bungee] text-4xl sm:text-5xl lg:text-6xl leading-tight text-black mb-6">
-        <span class="block ml-[-80px]">WORK</span>
-        <span class="block ">THAT</span>
+        <span class="block ml-[-50px]">WORK</span>
+        <span class="block">THAT</span>
         <span class="block">MATTERS</span>
       </h1>
 
@@ -116,34 +126,23 @@ window.addEventListener('resize', function() {
         </p>
       </div>
 
-     <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+      <!-- === BUTTON === -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
         <!-- Tombol putih -->
-        <button class="bg-[#ffffff] text-[#000] font-semibold px-6 py-3 rounded-2xl shadow-md hover:bg-[#f0f0f0] transition-all">
-        Learn More
+        <button class="bg-white text-black font-semibold px-6 py-3 rounded-2xl shadow-md hover:bg-[#f0f0f0] transition-all duration-300">
+          Learn More
         </button>
 
         <!-- Tombol cream -->
-        <button class="border-2 border-[#f5deb3] bg-[#f5deb3] text-[#000] font-semibold px-6 py-3 rounded-2xl hover:bg-[#f1d7a7] transition-all">
-        Get In Touch
+        <button class="border-2 border-[#f5deb3] bg-[#f5deb3] text-black font-semibold px-6 py-3 rounded-2xl hover:bg-[#f1d7a7] transition-all duration-300">
+          Get In Touch
         </button>
       </div>
-      </div>
     </div>
-
-    <!-- === ANIMASI === -->
-    <div class="flex justify-center ml-[-950px]">
-      <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
-      <dotlottie-wc 
-        src="https://lottie.host/d5c1483b-ec5d-4323-9f1f-0a27fa264eb1/ce0A5yBC7M.lottie" 
-        class="w-[320px] sm:w-[360px] md:w-[440px] lg:w-[520px]"
-        autoplay 
-        loop>
-      </dotlottie-wc>
-    </div>
-
   </div>
-
 </section>
+
+
 
 
 
@@ -610,8 +609,7 @@ window.addEventListener('resize', function() {
   </div>
 
   <!-- ===== SLIDER LOGO ===== -->
-  
-<section class="w-full min-h-[100vh] bg-[#fdf6ee] flex flex-col justify-center items-center py-20 overflow-hidden relative scroll-panel mt-[-300px]">
+  <section class="w-full min-h-[100vh] bg-[#fdf6ee] flex flex-col justify-center items-center py-20 overflow-hidden relative scroll-panel mt-[-300px]">
   <p class="uppercase text-[12px] sm:text-[14px] tracking-[4px] text-gray-700 font-inter mb-3 sm:mb-4">
     Companies
   </p>
@@ -636,6 +634,7 @@ window.addEventListener('resize', function() {
 </section>
 
 <style>
+/* === Slider Wrapper === */
 .slider-wrapper {
   display: flex;
   width: 100%;
@@ -643,23 +642,24 @@ window.addEventListener('resize', function() {
   position: relative;
 }
 
+/* === Track Bergerak === */
 .slider-track {
   display: flex;
   align-items: center;
   width: max-content;
-  animation: scroll 20s linear infinite;
+  animation: scroll 35s linear infinite;
 }
 
 @keyframes scroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-25%); } /* karena kita gandakan 4x */
 }
 
 /* === Logo Card === */
 .logo-card {
   flex-shrink: 0;
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   background: white;
   border-radius: 1.5rem;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
@@ -669,6 +669,7 @@ window.addEventListener('resize', function() {
   margin-right: 1.5rem;
   transition: all 0.3s ease;
 }
+
 .logo-card img {
   max-width: 70%;
   max-height: 70%;
@@ -677,10 +678,12 @@ window.addEventListener('resize', function() {
   opacity: 0.8;
   transition: all 0.3s ease;
 }
+
 .logo-card:hover img {
   filter: grayscale(0);
   opacity: 1;
 }
+
 .logo-card:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
@@ -689,61 +692,18 @@ window.addEventListener('resize', function() {
 /* Responsive */
 @media (max-width: 768px) {
   .logo-card {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
   }
 }
 </style>
 
 <script>
-// Gandakan isi supaya panjang cukup buat looping
+// Ambil elemen track
 const track = document.getElementById("logoTrack");
+// Gandakan isi sebanyak 4 kali biar penuh tanpa celah
 const clone = track.innerHTML;
-track.innerHTML += clone + clone; // 3x isi → benar-benar tanpa celah
-</script>
-</section>
-
-<style>
-  @keyframes slide {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-  .animate-slide {
-    display: flex;
-    width: calc(200%);
-    animation: slide 30s linear infinite;
-  }
-</style>
-<script>
-   === CARD SLIDE (ROTATE + FADE + DEPTH) ===
-  const cards = document.querySelectorAll("#cardContainer .card");
-  let current = 0;
-
-  setInterval(() => {
-    const prev = cards[current];
-    current = (current + 1) % cards.length;
-    const next = cards[current];
-
-    gsap.to(prev, {
-      opacity: 0,
-      scale: 0.9,
-      rotateY: gsap.utils.random(-25, 25),
-      duration: 0.6,
-      ease: "power1.inOut"
-    });
-
-    gsap.to(next, {
-      opacity: 1,
-      scale: 1,
-      rotateY: 0,
-      duration: 0.8,
-      ease: "power2.out"
-    });
-  }, 2500);
+track.innerHTML += clone + clone + clone + clone;
 </script>
 
 </body>
